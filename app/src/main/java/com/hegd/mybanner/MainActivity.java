@@ -53,13 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, final int position) {
-            holder.nickName.setText(nickNames[position%4]);
-            holder.desc.setText(descs[position%5]);
             holder.bg.setImageResource(bgs[position%4]);
             holder.bg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, holder.nickName.getText(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "00000", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -71,14 +69,9 @@ public class MainActivity extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             ImageView bg;
-            TextView nickName;
-            TextView desc;
             public ViewHolder(View itemView) {
                 super(itemView);
                 bg = itemView.findViewById(R.id.img_bg);
-                nickName = itemView.findViewById(R.id.tv_nickname);
-                desc = itemView.findViewById(R.id.tv_desc);
-
             }
         }
     }
